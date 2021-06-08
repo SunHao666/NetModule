@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NetModule</string>
+    <string name="input_phone_text">请输入手机号</string>
+</resources>
