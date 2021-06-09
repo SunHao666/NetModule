@@ -1,6 +1,7 @@
 package com.example.netmodule.base
 
 import com.example.netmodule.bean.LoginBean
+import com.example.netmodule.common.NetExceptionUtils
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import kotlin.math.log
@@ -21,6 +22,9 @@ open class BaseObserver<T> : Observer<T> {
     override fun onError(e: Throwable?) {
         if(e is BaseException){
             println(e.errorMsg)
+        }else{
+            val errorMsg = NetExceptionUtils.exceptionHandler(e!!)
+            println(errorMsg)
         }
         println("loading结束")
     }
